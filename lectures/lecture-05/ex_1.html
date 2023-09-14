@@ -11,7 +11,7 @@
     }
 </style>
 <!--- ... --->
-<div id="box" class="blue red"></div>
+<div id="box" class="blue"></div>
 <script>
     const box = document.querySelector('#box');
     const changeColor = () => {
@@ -26,5 +26,19 @@
         }
     }
     box.addEventListener('click', changeColor);
+
+    // alternate solution
+    // const box = document.querySelector('#box');
+    // box.addEventListener('click', () => {
+    //      console.log("clicked");
+    //      if (box.classList.contains("blue")) {
+    //      box.classList.remove("blue");
+    //          box.classList.add("red");
+    //      }
+    //      else {
+    //          box.classList.remove("red");
+    //          box.classList.add("blue");
+    //      }
+    // });
 </script>
     
