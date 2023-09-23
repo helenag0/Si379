@@ -69,17 +69,26 @@ inputEl.addEventListener('keydown', (ev) => {
             showInfoMessage("Your guess must be " + WORD_LENGTH + " letters long.");
         }
         else if(guess === correctAnswer) {
-            showInfoMessage("You win! The answer was " + correctAnswer + ".");
+            displayGuessFeedback(guess);
+            showInfoMessage("You win! The answer was '" + correctAnswer + "'.");
             inputEl.setAttribute('disabled', true);
         }
         else {
             inputEl.value = "";
-            if(isValidWord(guess) === true) {
-                displayGuessFeedback(guess);
-            }
-            else {
-                showInfoMessage(guess + " is not a valid word.");
-            }
+            isValidWord(guess, function(isValid) {
+                if (isValid) {
+                    displayGuessFeedback(guess);
+                } else {
+                    showInfoMessage(guess + " is not a valid word.");
+                }
+            });
+            
+            // if(isValidWord(guess, function(isValidWord)) === true) {
+            //     displayGuessFeedback(guess);
+            // }
+            // else {
+            //     showInfoMessage(guess + " is not a valid word.");
+            // }
         }
     }
     else {
