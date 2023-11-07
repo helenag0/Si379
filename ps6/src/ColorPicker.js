@@ -5,7 +5,7 @@ import React from "react";
 const MIN = 0;
 const MAX = 255;
 
-function App() {
+function ColorPicker() {
   const [redGuess, setRedGuess]     = React.useState(getRandomIntegerBetween(MIN, MAX));
   const [greenGuess, setGreenGuess] = React.useState(getRandomIntegerBetween(MIN, MAX));
   const [blueGuess, setBlueGuess]   = React.useState(getRandomIntegerBetween(MIN, MAX));
