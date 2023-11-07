@@ -42,7 +42,7 @@ function ColorPicker() {
 
 
   return (
-    <div className="App">
+    <div className="ColorPicker">
 
     <label id="cheating-mode">Cheating mode
       <input type="checkbox" onChange={toggleCheatBox} checked={cheatingMode} />
@@ -82,7 +82,7 @@ function ColorPicker() {
   );
 }
 
-export default App;
+export default ColorPicker;
 
 function getRandomIntegerBetween(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
