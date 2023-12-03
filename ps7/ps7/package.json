@@ -2,7 +2,7 @@
   "name": "ps7",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://helenag0.github.io/Si379/ps7/build",
+  "homepage": "https://helenag0.github.io/Si379/ps7/ps7/build",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
