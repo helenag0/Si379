@@ -1,0 +1,44 @@
+<style>
+    #box {
+         width: 250px;
+         height: 250px;
+    }
+    .blue {
+        background-color: blue;
+    }
+    .red {
+        background-color: red;
+    }
+</style>
+<!--- ... --->
+<div id="box" class="blue"></div>
+<script>
+    const box = document.querySelector('#box');
+    const changeColor = () => {
+        console.log("you clicked the box!");
+        if (box.classList.contains("blue")) {
+            box.classList.remove("blue");
+            box.classList.add("red");
+        }
+        else {
+            box.classList.remove("red");
+            box.classList.add("blue");
+        }
+    }
+    box.addEventListener('click', changeColor);
+
+    // alternate solution
+    // const box = document.querySelector('#box');
+    // box.addEventListener('click', () => {
+    //      console.log("clicked");
+    //      if (box.classList.contains("blue")) {
+    //      box.classList.remove("blue");
+    //          box.classList.add("red");
+    //      }
+    //      else {
+    //          box.classList.remove("red");
+    //          box.classList.add("blue");
+    //      }
+    // });
+</script>
+    

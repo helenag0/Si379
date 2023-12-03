@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemon Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <input type="text" id="taskInput" placeholder="Enter task description">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+        <div id="timer">
+            <p id="timerDisplay">25:00</p>
+            <button onclick="startTimer()">Start</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 600px;
+  text-align: center; /* Center the text inside #app */
+}
+
+#taskList {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+#timer {
+  margin-top: 20px;
+}
+
+#timerDisplay {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.taskInput {
+  display: none; /* Correcting the value */
+}
+
+p {
+  text-align: center;
+  margin: auto;
+}
+
+#addTaskButton {
+  padding: 10px;
+  padding-left: 150px;
+  padding-right: 150px;
+  background-color: rgb(42, 88, 255);
+  color: white; /* Optionally, set the text color */
+  border: none; /* Optionally, remove the button border */
+  cursor: pointer; /* Add a pointer cursor for better user experience */
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+#workInterval, #breakInterval {
+  font-size: 15px;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding: 10px;
+}
+
+.col {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+/* .colLabel {
+  display: inline-block;
+}
+
+.colInput {
+  display: block;
+} */
+
+p {
+  margin: 20px;
+}
+
+.task-row {
+  /* padding-left: 150px;
+  padding-right: 150px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Use space-between to push items to the ends */
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+  
+}
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.task-row input {
+  width: 25%;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid rgb(189, 189, 189);
+  padding-left: 6px;
+  padding: 10px;
+}
+.task-row button {
+  flex: 1;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 10px;
+  border: 2px solid green; 
+  background-color: transparent; /* Make the background transparent */
+  color: green; /* Set the text color to green */
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 5px;
+
+} 
+
+.task-row button.deleteButton {
+  border: 2px solid rgb(207, 0, 0);
+  color: rgb(207, 0, 0);
+}
+
+#headertext {
+  font-size: 27px;
+  font-weight: 50;
+  margin-bottom: 40px;
+}
+
+.workInterval input {
+  padding: 40px;
+}
+
+.stopButton {
+  border: 2px solid rgb(207, 0, 0);
+  color: rgb(207, 0, 0);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 5px;
+  background: transparent;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.interval-box {
+  margin-bottom: 20px;
+}

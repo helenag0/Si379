@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Si379/ps6/build/static/css/main.affc11e9.css",
+    "main.js": "/Si379/ps6/build/static/js/main.bf5ed2a9.js",
+    "index.html": "/Si379/ps6/build/index.html",
+    "main.affc11e9.css.map": "/Si379/ps6/build/static/css/main.affc11e9.css.map",
+    "main.bf5ed2a9.js.map": "/Si379/ps6/build/static/js/main.bf5ed2a9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.affc11e9.css",
+    "static/js/main.bf5ed2a9.js"
+  ]
+}

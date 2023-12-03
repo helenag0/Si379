@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #block {
+                position: absolute;
+                border: 1px solid black;
+                height: 150px;
+                width: 150px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="block" />
+        <script>
+            // define a function to set the x location
+            function setX(x) {
+                const block = document.querySelector('#block');
+                block.style.setProperty('left', `${x}px`)
+            }
+            //fps = frames per section
+            function runSimpleAnimation(duration, fromX, toX) {
+                // let x = 0;
+                // const to_x = 500; // animate from x=0 to x=500
+                const animationStarted = Date.now();
+                
+                function step() {
+
+                    const now = Date.now(); 
+                    const pct = (now - animationStarted)/duration;
+                    // pct is percentage complete of our animation
+                    // pct starts at 0 -> 1
+
+                    const x = pct * to_x + fromX;
+                    // pct = 0 -> x = fromX
+                    // pct = 1 -> x = toX
+                    setX(x); // move the block to x
+                    
+                    if(pct < 1) {
+                        setTimeout(step, 1000/fps); 
+                        // run step() fps times per second
+                    }
+                    
+                }
+                step();
+            }
+
+            // runSimpleAnimation(30); //run at 30fps
+
+
+        </script>
+    </body>
+</html>
