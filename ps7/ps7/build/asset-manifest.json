@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Si379/ps7/build/static/css/main.10dda2bb.css",
-    "main.js": "/Si379/ps7/build/static/js/main.5fba7ff0.js",
-    "static/js/787.962c6734.chunk.js": "/Si379/ps7/build/static/js/787.962c6734.chunk.js",
-    "index.html": "/Si379/ps7/build/index.html",
-    "main.10dda2bb.css.map": "/Si379/ps7/build/static/css/main.10dda2bb.css.map",
-    "main.5fba7ff0.js.map": "/Si379/ps7/build/static/js/main.5fba7ff0.js.map",
-    "787.962c6734.chunk.js.map": "/Si379/ps7/build/static/js/787.962c6734.chunk.js.map"
+    "main.css": "/Si379/ps7/ps7/build/static/css/main.10dda2bb.css",
+    "main.js": "/Si379/ps7/ps7/build/static/js/main.d5950989.js",
+    "static/js/787.962c6734.chunk.js": "/Si379/ps7/ps7/build/static/js/787.962c6734.chunk.js",
+    "index.html": "/Si379/ps7/ps7/build/index.html",
+    "main.10dda2bb.css.map": "/Si379/ps7/ps7/build/static/css/main.10dda2bb.css.map",
+    "main.d5950989.js.map": "/Si379/ps7/ps7/build/static/js/main.d5950989.js.map",
+    "787.962c6734.chunk.js.map": "/Si379/ps7/ps7/build/static/js/787.962c6734.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.10dda2bb.css",
-    "static/js/main.5fba7ff0.js"
+    "static/js/main.d5950989.js"
   ]
 }
