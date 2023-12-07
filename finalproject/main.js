@@ -20,26 +20,41 @@ import { startConfetti } from 'confetti';
   // Call the function to generate the maze walls
   generateMazeWalls();
   
-// Add raycaster to the camera to detect collisions with walls
-const camera = document.querySelector('[camera]');
+
+const camera = document.getElementById('player'); 
 camera.setAttribute('raycaster', {
   showLine: true,
   far: 5,
-  objects: '.wall'
+  objects: '.clickable, .ground, .wall',
 });
 
 
-function startConfettiOnClick() {
-  const sign = document.querySelector('#center a-text');
+// function startConfettiOnCollision() {
+//   const player = document.getElementById('player');
+//   const centerBox = document.getElementById('center');
 
-  sign.addEventListener('click', () => {
-    startConfetti(); // Call the confetti function
+//   centerBox.addEventListener('collide', (event) => {
+//     // Check if the collision is with the player
+//     if (event.detail.body.el === player) {
+//       startConfetti();
+//     }
+//   });
+// }
+
+// startConfettiOnCollision();
+
+const centerBox = document.getElementById('center');
+
+function startConfettiOnClick() {
+  // Add a click event listener to the center box
+  centerBox.addEventListener('click', () => {
+    startConfetti();
+    console.log("clicked");
   });
 }
 
 // Call the function to start confetti on click
 startConfettiOnClick();
-
   
 
   
