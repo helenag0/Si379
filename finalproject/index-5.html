@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>VR Maze</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.3.0/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.6.0/dist/aframe-look-at-component.min.js"></script> 
+    <script src="https://unpkg.com/aframe-maze-component@0.1.24/dist/aframe-maze-component.min.js"></script>
+    <script src="confetti-falling-animation/confetti.js"></script>
+    <script src="main-5.js" defer></script>
+    
+  </head>
+  <body>
+    <a-scene inspector keyboard-shortcuts screenshot vr-mode-ui device-orientation-permission-ui fog>
+      <a-assets>
+        <img id="texture-wall" src="./brick_texture.png">
+        <img id="texture-floor" src="./grass_texture.png">
+        <a-box id="wall-one" 
+        static-body material="src: #texture-wall" 
+        depth="1" width="4" height="5"></a-box>
+        <a-cylinder id="end-cap"
+          static-body color="#444444" 
+          depth="1.1" width="1.1" height="5"
+          radius="0.5"></a-cylinder>
+        </a-assets>
+      <a-entity 
+        environment="
+          preset: forest;
+          dressing: trees;
+          dressingAmount: 300;
+          dressingColor: #544e1f;
+          skyColor: #bc86ff;
+          horizonColor: #dcb0e2;
+          lightPosition: 1 5 -2;
+          groundTexture: walkernoise;
+          groundColor: #52513f;
+          groundColor2: #5f5c64;
+          dressingScale: 7.49;
+          dressingVariance: 1 1 1"
+        visible>
+      </a-entity>
+
+      <!-- Player entity -->
+      <!-- <a-entity id="player" camera position="0 1.6 0" wasd-controls look-controls></a-entity> -->
+      <a-entity id="player" position="-7 0 11" wasd-controls look-controls></a-entity>
+      <!-- <a-entity camera position="0 1.6 0" wasd-controls look-controls></a-entity> -->
+      <a-sky radius="200" theta-length="110" material="shader: gradientshader; topColor: #ddc2ff; bottomColor: #1a3a55" geometry scale="1 1 -1"></a-sky>
+  
+
+      <a-box id="center" position="-8 0 -10" color="red" depth="0.5" width="0.5" height="10" static-body>
+        <!-- Add a text sign -->
+        <a-text value="Click me" position="0 1 0" scale="2 2 2" material="color: white"></a-text>
+      </a-box>
+      
+
+      <!-- walls -->
+      <a-box id="wall-one" position="x y z" scale="2 2 2" material="src: #texture-wall" static-body></a-box>
+      <a-box position="-2 0 -12"  scale="1 1 1" height="5" width="7" material="src: #texture-wall" static-body></a-box>
+      <a-box position="10 0 10" rotation="0 90 0"  scale="1 1 1" height="5" width="5" material="src: #texture-wall" static-body></a-box>
+      <a-box position="6 0 -12" scale="1 1 1" height="5" width="5" material="src: #texture-wall" static-body></a-box>
+      <a-box position="-10 0 3" scale="1 1 1" height="5" width="3" material="src: #texture-wall" static-body></a-box>
+      
+    
+      <a-entity id="maze1" 
+      maze='size: 5 6; wall: #wall-one; cap: #end-cap; open: S 0 N 1 2 4 E 5;' 
+      position='0 0.5 0'
+      rotation='0 0 0'></a-entity>
+
+      
+    </a-scene>
+
+    <canvas id="confetti-canvas" style="display:block;z-index:999999;pointer-events:none"></canvas>
+
+  </body>
+</html>
