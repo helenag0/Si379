@@ -1,4 +1,5 @@
-import { startConfetti } from 'confetti';
+// import { startConfetti } from 'confetti';
+
   
   // Function to generate the maze walls
   function generateMazeWalls() {
@@ -19,6 +20,7 @@ import { startConfetti } from 'confetti';
   
   // Call the function to generate the maze walls
   generateMazeWalls();
+  startConfetti();
   
 
 const camera = document.getElementById('player'); 
@@ -56,5 +58,20 @@ function startConfettiOnClick() {
 // Call the function to start confetti on click
 startConfettiOnClick();
   
+
+AFRAME.registerComponent('clickable', {
+  init: function () {
+    const el = this.el;
+    el.addEventListener('click', function () {
+      // Handle click event here, e.g., reset the game
+      const player = document.getElementById('player');
+      player.setAttribute('position', '-8 1.6 19');
+    });
+  },
+});
+
+// Add the 'reset-game' component to the reset button
+document.getElementById('resetButton').setAttribute('reset-game', '');
+
 
   

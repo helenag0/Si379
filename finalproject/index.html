@@ -12,14 +12,14 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.6.0/dist/aframe-look-at-component.min.js"></script> 
     <script src="https://unpkg.com/aframe-maze-component@0.1.24/dist/aframe-maze-component.min.js"></script>
-    <script src="confetti-falling-animation/confetti.js"></script>
-    <script src="./aframe-extras.js"></script>
     <script src="main.js" defer></script>
+    
   </head>
 
   <body>
 
-    <a-scene inspector keyboard-shortcuts screenshot vr-mode-ui device-orientation-permission-ui fog>
+    <a-scene inspector keyboard-shortcuts screenshot vr-mode-ui 
+    device-orientation-permission-ui fog physics="gravity: -9.8">
       <a-assets>
         <img id="texture-wall" src="./brick_texture.png">
         <img id="texture-floor" src="./grass_texture.png">
@@ -45,7 +45,7 @@
         environment="
           preset: forest;
           dressing: trees;
-          dressingAmount: 300;
+          dressingAmount: 220;
           dressingColor: #544e1f;
           skyColor: #bc86ff;
           horizonColor: #dcb0e2;
@@ -53,7 +53,7 @@
           groundTexture: walkernoise;
           groundColor: #52513f;
           groundColor2: #5f5c64;
-          dressingScale: 7.49;
+          dressingScale: 8.6;
           dressingVariance: 1 1 1"
         visible>
       </a-entity>
@@ -61,10 +61,37 @@
       <!-- <a-grid static-body></a-grid> -->
 
     
+      <!-- <a-entity confetti>
+        <a-animation
+          id="confetti-animation"
+          attribute="position"
+          easing="easeInQuad"
+          from="-8 -1 -9" 
+          to="-8 -12 -9" 
+          dur="2000"
+          repeat="indefinite"  
+        ></a-animation>
+      </a-entity> -->
+
+      <a-entity confetti
+        position="-8 -1 -9"
+        animation="dur: 2000; from: -8 -1 -9; to: -8 -12 -9; loop: true"
+        visible="true">
+      </a-entity>
+
+
+
+      
+     
 
       <!-- player -->
   
-      <a-entity id="player" camera position="-7 1.6 11" wasd-controls look-controls></a-entity>
+      <a-entity id="player" camera position="-8 1.6 19" wasd-controls look-controls>
+        <a-cursor color="white" position="0 0 -1"></a-cursor>
+      </a-entity>
+      <!-- <a-camera>
+        <a-cursor color="white" position="0 0 -1"></a-cursor>
+      </a-camera> -->
       <!-- <a-entity
         universal-controls
         camera 
@@ -98,16 +125,27 @@
         </a-entity>
       </a-box>
       
-    
+      <!-- maze -->
       <a-entity id="maze1" 
       maze='size: 5 6; wall: #wall-one; cap: #end-cap; open: S 0 N 1 2 4 E 5;' 
       position='0 0.5 0'
       rotation='0 0 0'></a-entity>
 
-      
+      <!-- enter maze -->
+      <a-plane 
+      position="-8 0.2 13.5"
+      rotation="-90 0 0"
+      width="3"
+      height="0.5"
+      color="lightgreen"
+      scale="1 5 1">
+      <a-text value="Enter Maze" scale="2 1 2" position="-1.1 0 0" text="color: black"></a-text>
+    </a-plane>
+
+    <script src="confetti-component.js"></script>
     </a-scene>
 
-    <canvas id="confetti-canvas" style="display:block;z-index:999999;pointer-events:none"></canvas>
-
+    
   </body>
 </html>
+
